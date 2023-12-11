@@ -1,13 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Dog Heaven</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <nav>
+        <ul>
+          <li>Rasta-Hunden-Väder</li>
+          <li>Dagens citat</li>
+          <li>Hund-Generator</li>
+          <li>Filmtips för hundälskaren</li>
+        </ul>
+      </nav>
+      <h1>Lasses Dog Heaven</h1>
+    </header>
+    <main>
+      <section id="weather" class="weather__section"></section>
+      <section id="quote" class="quote__section"></section>
+      <section id="dogGenerator" class="dog-generator__section"></section>
+      <section id="dogMovies" class="dog-movies__section"></section>
+    </main>
     <script type="module" src="/src/ts/main.ts"></script>
   </body>
 </html>
