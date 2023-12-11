@@ -15,4 +15,5 @@ export const getQuote = async (): Promise<IQuote[]> => {
   quoteContainer?.appendChild(title);
 
   return data;
+  
 };
