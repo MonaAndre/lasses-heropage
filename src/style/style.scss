@@ -1,0 +1,35 @@
+@import "mixins";
+@import "variables";
+
+*,
+*::before,
+*::after {
+  @include box-sizing;
+}
+
+.quote {
+    font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(50, 49, 49);
+  color: white;
+  position: relative;
+  text-align: center;
+  &__btn {
+    width: 200px;
+    height: 100px;
+    padding: 2rem;
+    background-color: rgb(130, 209, 180);
+    border-radius: 3rem;
+    border: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+   
+  }
+  
+}
