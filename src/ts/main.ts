@@ -8,3 +8,8 @@ quoteBtn?.addEventListener("click",async ()=>{
 });
 
 
+const quoteBtn = document.getElementById("getbtn") as HTMLButtonElement;
+quoteBtn?.addEventListener("click",async ()=>{
+    await getQuote()
+    
+});
