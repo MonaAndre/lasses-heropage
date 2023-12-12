@@ -1,4 +1,6 @@
+
 import { IQuote } from "../Moduls/IQuote";
+
 import { get } from "./serviceBase";
 
 export const getQuote = async (): Promise<IQuote[]> => {
@@ -16,3 +18,5 @@ export const getQuote = async (): Promise<IQuote[]> => {
 
   return data;
 };
+};
+
