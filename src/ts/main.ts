@@ -1,15 +1,19 @@
 import '../style/style.scss';
-import { getQuote } from './services/axiosServices';
+import { getQuotes, getRandomIndex , drawQuote } from './services/axiosServices';
+
+const title = document.createElement("h2") as HTMLHeadingElement;
+title.className="quote__text"
+const quoteContainer = document.getElementById("quote");
+quoteContainer?.appendChild(title);
+
+const author = document.createElement("h4") as HTMLHeadingElement;
+author.className="quote__author"
+quoteContainer?.appendChild(author);
+
 
 const quoteBtn = document.getElementById("getbtn") as HTMLButtonElement;
 quoteBtn?.addEventListener("click",async ()=>{
-    await getQuote()
-    
-});
-
-
-const quoteBtn = document.getElementById("getbtn") as HTMLButtonElement;
-quoteBtn?.addEventListener("click",async ()=>{
-    await getQuote()
+    const quotes= await getQuotes();
+    drawQuote(quotes[getRandomIndex()]);
     
 });

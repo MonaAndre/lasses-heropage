@@ -7,21 +7,27 @@
   @include box-sizing;
 }
 
+section{
+  height: 100vh;
+}
 .quote {
-    font-family: sans-serif;
+  font-family: sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: rgb(50, 49, 49);
+  background-image: url(../images/clouds-284688_1280.jpg);
+  // background-color: rgb(50, 49, 49);
+  background-size: cover;
+  background-position: center;
   color: white;
   position: relative;
   text-align: center;
   &__btn {
-    width: 200px;
-    height: 100px;
+    width: 15rem;
+    height: 5rem;
     padding: 2rem;
-    background-color: rgb(130, 209, 180);
+    background-color: rgb(242 158 34);
     border-radius: 3rem;
     border: none;
     color: rgb(255, 255, 255);
@@ -29,9 +35,12 @@
     position: absolute;
     bottom: 3rem;
     right: 3rem;
-   
+    transition: all 0.3s ease;
   }
-
+  &__btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
 }
-
 
