@@ -1,7 +1,16 @@
 import "../style/style.scss";
 import { IDog } from "./models/IDog";
 import { generateDogs } from "./services/axiosServices";
-import { getQuote } from "./services/axiosServices";
+import { getQuotes, getRandomIndex , drawQuote } from './services/axiosServices';
+
+const title = document.createElement("h2") as HTMLHeadingElement;
+title.className="quote__text"
+const quoteContainer = document.getElementById("quote");
+quoteContainer?.appendChild(title);
+
+const author = document.createElement("h4") as HTMLHeadingElement;
+author.className="quote__author"
+quoteContainer?.appendChild(author);
 
 const generateButton = document.getElementById("generateButton");
 
@@ -66,6 +75,8 @@ weatherDiv.appendChild(wind);
 weatherToday?.appendChild(weatherDiv);
 
 const quoteBtn = document.getElementById("getbtn") as HTMLButtonElement;
-quoteBtn?.addEventListener("click", async () => {
-  await getQuote();
+quoteBtn?.addEventListener("click",async ()=>{
+    const quotes= await getQuotes();
+    drawQuote(quotes[getRandomIndex()]);
+    
 });

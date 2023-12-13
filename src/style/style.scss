@@ -1,10 +1,10 @@
 @import "mixins";
 @import "variables";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 *,
@@ -13,21 +13,27 @@
   @include box-sizing;
 }
 
+section {
+  height: 100vh;
+}
 .quote {
   font-family: sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: rgb(50, 49, 49);
+  background-image: url(../images/clouds-284688_1280.jpg);
+  // background-color: rgb(50, 49, 49);
+  background-size: cover;
+  background-position: center;
   color: white;
   position: relative;
   text-align: center;
   &__btn {
-    width: 200px;
-    height: 100px;
+    width: 15rem;
+    height: 5rem;
     padding: 2rem;
-    background-color: rgb(130, 209, 180);
+    background-color: rgb(242 158 34);
     border-radius: 3rem;
     border: none;
     color: rgb(255, 255, 255);
@@ -35,6 +41,11 @@
     position: absolute;
     bottom: 3rem;
     right: 3rem;
+    transition: all 0.3s ease;
+  }
+  &__btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 }
 
@@ -42,47 +53,46 @@
   height: 50px;
 }
 
-
-.weather__section{
-    display: flex;
+.weather__section {
+  display: flex;
 }
-#weatherReport{
-    background-color: lightblue;
-    height: 100vh;
-    width: 50vw;
+#weatherReport {
+  background-color: lightblue;
+  height: 100vh;
+  width: 50vw;
 }
-#dogImg{
-    background-color: antiquewhite;
-    height: 100vh;
-    width: 50vw;
+#dogImg {
+  background-color: antiquewhite;
+  height: 100vh;
+  width: 50vw;
 }
-.head{
-    position: relative;
-    min-height: 50vh;
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: center;
-    font-size: 4rem;
-    font-family: 'Times New Roman', Times, serif;
-    color: rgb(45, 42, 109);
+.head {
+  position: relative;
+  min-height: 50vh;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(45, 42, 109);
 }
 
 .custom-shape-divider-bottom-1702397406 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .custom-shape-divider-bottom-1702397406 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 184px;
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 184px;
 }
 
 .custom-shape-divider-bottom-1702397406 .shape-fill {
-    fill: #ffffff;
+  fill: #ffffff;
 }
