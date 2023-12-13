@@ -3,6 +3,10 @@ import { IQuote } from "../Moduls/IQuote";
 
 import { get } from "./serviceBase";
 
+import { IDog } from "../models/IDog";
+import { get } from "./serviceBase";
+
+
 export const getQuote = async (): Promise<IQuote[]> => {
   const url = "https://type.fit/api/quotes";
   const data = await get<IQuote[]>(url);
@@ -21,3 +25,9 @@ export const getQuote = async (): Promise<IQuote[]> => {
 };
 };
 
+
+export const generateDogs = async () => {
+  const url = "https://api.thedogapi.com/v1/images/search?limit=3";
+  const data = await get<IDog[]>(url);
+  return data;
+};
