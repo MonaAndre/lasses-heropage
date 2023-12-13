@@ -1,5 +1,6 @@
 @import "mixins";
 @import "variables";
+@import "hamburger";
 
 * {
   margin: 0;
@@ -11,6 +12,10 @@
 *::before,
 *::after {
   @include box-sizing;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 section {

@@ -8,13 +8,18 @@
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li>Rasta-Hunden-Väder</li>
-          <li>Dagens citat</li>
-          <li>Hund-Generator</li>
-          <li>Filmtips för hundälskaren</li>
+      <nav class="navBar">
+        <ul class="navMenu">
+          <li class="navItem"><a href="#weather" class="navLink">Rasta-Hunden-Väder</a></li>
+          <li class="navItem"><a href="#quote" class="navLink">Dagens citat</a></li>
+          <li class="navItem"><a href="#dogGenerator" class="navLink">Hund-Generator</a></li>
+          <li class="navItem"><a href="#dogMovies" class="navLink">Filmtips för hundälskaren</a></li>
         </ul>
+        <div class="hamburger">
+        <span class="hamburgerBar"></span>
+        <span class="hamburgerBar"></span>
+        <span class="hamburgerBar"></span>
+      </div>
       </nav>
       <div class="head">
       <h1>Lasses Dog Heaven</h1>
@@ -50,5 +55,6 @@
       <section id="dogMovies" class="dog-movies__section"></section>
     </main>
     <script type="module" src="/src/ts/main.ts"></script>
+    <script type="module" src="/src/ts/hamburger.ts"></script>
   </body>
 </html>
