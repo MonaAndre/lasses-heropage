@@ -18,6 +18,11 @@
       .navLink {
         color: $primaryColor;
         text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .navLink:hover {
+        color: $forthColor;
+        text-decoration: none;
       }
     }
   }
