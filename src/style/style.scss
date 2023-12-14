@@ -115,6 +115,7 @@ h2 {
 }
 .weather__section {
   display: flex;
+  background-color:white ;
 }
 #weatherReport {
   background-color: lightblue;
@@ -129,9 +130,10 @@ h2 {
 }
 .head {
   position: relative;
-  min-height: 80vh;
+  min-height: 85vh;
   background-color: antiquewhite;
   display: flex;
+  bottom: 0;
   justify-content: center;
   font-size: 4rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
