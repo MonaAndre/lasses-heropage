@@ -20,12 +20,26 @@ html {
 
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color:rgb(250 234 215);;
 }
 
 section,
 header {
   height: 100vh;
 }
+
+
+
+section{
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  
+}
+section.in-view {
+  opacity: 1;
+}
+
+
 
 h2 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -48,10 +62,10 @@ h2 {
     width: 15rem;
     height: 5rem;
     padding: 2rem;
-    background-color: rgb(242 158 34);
+    background-color:$forthColor;
     border-radius: 3rem;
     border: none;
-    color: rgb(255, 255, 255);
+    color: $primaryColor;
     text-align: center;
     position: absolute;
     bottom: 3rem;

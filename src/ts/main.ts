@@ -142,3 +142,25 @@ async function searchMovies() {
 
 // Anropa searchMovies när sidan laddas
 window.addEventListener("load", searchMovies);
+
+// animation on scroll
+const sections = document.querySelectorAll(".section");
+
+const observerOptions = {
+  root: null,
+  threshold: 0.5,
+};
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("in-view");
+    } else {
+      entry.target.classList.remove("in-view");
+    }
+  });
+}, observerOptions);
+
+sections.forEach((section) => {
+  sectionObserver.observe(section);
+});
