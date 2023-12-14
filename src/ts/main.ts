@@ -1,7 +1,9 @@
 import "../style/style.scss";
 import { IDog } from "./models/IDog";
+import { IMoviesLassi } from "./models/IMoviesLassie";
 import { generateDogs } from "./services/axiosServices";
 import { getQuotes, getRandomIndex, drawQuote } from "./services/axiosServices";
+import axios from "axios";
 
 const title = document.createElement("h2") as HTMLHeadingElement;
 title.className = "quote__text";
@@ -101,3 +103,42 @@ document.querySelectorAll(".navLink").forEach((link) =>
     navMenu?.classList.remove("active");
   })
 );
+
+interface IMoviesLassiResponse {
+  Search: IMoviesLassi[];
+}
+
+async function searchMovies() {
+  try {
+    const movieData = await axios.get<IMoviesLassiResponse>(
+      "https://www.omdbapi.com/?s=lassie&ref&&apikey=73e393cc&i=tt0110305"
+    );
+
+    const container = document.getElementById("dogMovies");
+
+    if (container) {
+      movieData.data.Search.forEach(async (movie) => {
+        const movieCard = document.createElement("div") as HTMLDivElement;
+        movieCard.className = "movie-card";
+
+        const movieTitle = document.createElement("h3") as HTMLHeadingElement;
+        movieTitle.className = "movie-title";
+        movieTitle.innerHTML = movie.Title;
+
+        const movieImg = document.createElement("img") as HTMLImageElement;
+        movieImg.className = "movie-img";
+        movieImg.setAttribute("src", movie.Poster);
+
+        // Lägg till skapade element till container
+        movieCard.appendChild(movieTitle);
+        movieCard.appendChild(movieImg);
+        container.appendChild(movieCard);
+      });
+    }
+  } catch {
+    console.error("Ett fel uppstod vid hämtning av poster");
+  }
+}
+
+// Anropa searchMovies när sidan laddas
+window.addEventListener("load", searchMovies);
