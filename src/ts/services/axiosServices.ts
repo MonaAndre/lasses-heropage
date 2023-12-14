@@ -1,4 +1,4 @@
-import { IQuote } from "../Moduls/IQuote";
+import { IQuote } from "../models/IQuote";
 import { get } from "./serviceBase";
 import { IDog } from "../models/IDog";
 import { IWeatherResponse } from "../models/IWeatherResponse";
