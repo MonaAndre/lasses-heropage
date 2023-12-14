@@ -1,12 +1,6 @@
 @import "mixins";
 @import "variables";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
@@ -42,17 +36,44 @@
   height: 50px;
 }
 
-
 .weather__section{
     display: flex;
-}
-#weatherReport{
-    background-color: lightblue;
     height: 100vh;
-    width: 50vw;
+    justify-content: space-around;
+}
+#weatherToday{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1em;
+  padding: 40px;
+}
+#icon{
+  display: flex;
+  .iconClass{
+    margin-top: -30px;
+    padding: 5px;
+    width: 80px;
+  }
+}
+.tempDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: $primaryColor;
+  padding: 20px;
+  height: 40%;
+  border-radius: 20px;
+  font-size: 1.2em;
+  box-shadow: 0 0 10px;
+}
+#weatherH2{
+  font-size: 1.5em;
 }
 #dogImg{
-    background-color: antiquewhite;
+    background-image: url("https://media.istockphoto.com/id/165091048/sv/foto/dog-holding-leash.jpg?s=612x612&w=0&k=20&c=Niu1bcZGlkrgMt3y9L4qoHC2wz4VMANeDHpjzNxZP2k=");
+    background-repeat: no-repeat;
     height: 100vh;
     width: 50vw;
 }

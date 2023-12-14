@@ -38,19 +38,24 @@ const weatherForcast = await weatherResponse();
 const weatherDiv = document.createElement("div");
 weatherDiv.className = "tempDiv";
 //Stockholm
-const cityName = document.getElementById("cityName") as HTMLParagraphElement;
-cityName.innerHTML = "Vädret i " + weatherForcast.name + " idag:";
-
-//IWeather
+const icon = document.getElementById("icon");
+const cityName = document.createElement("h3")
 const weatherIcon = document.createElement("img");
+cityName.innerHTML = "Vädret i " + weatherForcast.name + " idag:";
+weatherIcon.src= "http://openweathermap.org/img/w/" + weatherForcast.weather[0].icon +".png";
+weatherIcon.className = "iconClass"
+icon?.appendChild(cityName)
+icon?.appendChild(weatherIcon);
+//IWeather
+
 const weatherDescription = document.createElement("p");
 const wind = document.createElement("p");
 
-weatherIcon.src= "http://openweathermap.org/img/w/" + weatherForcast.weather[0].icon +".png";
+
 weatherDescription.innerHTML = weatherForcast.weather[0].description
 wind.innerHTML = "Vind: " +weatherForcast.wind.speed +" m/s";
 
-weatherDiv.appendChild(weatherIcon);
+
 weatherDiv.appendChild(weatherDescription);
 
 //main
